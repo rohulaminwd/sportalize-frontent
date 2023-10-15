@@ -37,7 +37,7 @@ const LoginFrom = () => {
         try {
             const res = await userLogin({ ...data }).unwrap();
             console.log(res, data)
-            if (res?.data) {
+            if (res?.accessToken) {
                 router.push("/");
                 message.success("You have logged in successfully!");
                 reset()

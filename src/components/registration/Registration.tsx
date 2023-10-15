@@ -31,7 +31,7 @@ const Registration = () => {
             console.log(res, data)
             if (res?.accessToken) {
                 router.push("/");
-                message.success("You have logged in successfully!");
+                message.success("Account created successfully!");
                 reset()
             }
 
