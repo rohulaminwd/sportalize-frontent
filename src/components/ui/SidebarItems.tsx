@@ -19,7 +19,7 @@ export const sidebarItems = (role: string) => {
             icon: <ProfileOutlined />,
             children: [
                 {
-                    label: <Link href={`/${role}`} className="!text-white">Account Profile</Link>,
+                    label: <Link href={`/${role}`} className="!text-white w-full h-full bg-btn">Account Profile</Link>,
                     key: `/${role}/profile`,
                 },
                 {

@@ -133,6 +133,9 @@ body {
 .bg-dashboard {
   background: radial-gradient(circle, rgb(239, 234, 247) 0%, rgb(227, 240, 243) 100%);
 }
+.bg-btn {
+  background: radial-gradient(circle, rgba(104, 17, 243, 0.801) 0%, rgba(154, 85, 243, 0.801) 100%);
+}
 
 
 .registration-bg {
@@ -159,6 +162,12 @@ body {
 }
 
 .dashboard-content-bg{
+  background-image: url('../assets/image/dark-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-banner-bg {
   background-image: url('../assets/image/dark-bg.jpg');
   background-size: cover;
   background-position: center;

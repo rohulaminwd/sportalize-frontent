@@ -1,7 +1,11 @@
+import ProfileBanner from "@/components/profile/ProfileBanner";
+
 const ProfilePage = () => {
   return (
     <div>
-      <h1>Welcome back to your profile</h1>
+      <div>
+        <ProfileBanner />
+      </div>
     </div>
   );
 };

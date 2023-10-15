@@ -1,15 +1,16 @@
-import { Avatar, Button, Dropdown, Layout, MenuProps, Row, Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-// import { removeUserInfo } from '@/redux/service/auth.service';
-import { authKey } from '@/constants/storageKye';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import UserProfileImg from './UserProfileImg';
+
+
+import { Layout } from 'antd';
+
+import { useState } from 'react';
+
 import ProfileImg from './ProfileImg';
 import { dropdownDashboard } from '@/constants/routes';
+import LogOutModule from '@/modules/LogOutModule';
 const { Header: AntHeader } = Layout;
 
 const Header = () => {
+    const [logout, setLogout] = useState<any>(null);
 
     return (
         <div
@@ -18,7 +19,8 @@ const Header = () => {
             <div>
 
             </div>
-            <ProfileImg routes={dropdownDashboard} />
+            <ProfileImg routes={dropdownDashboard} setLogout={setLogout} />
+            {logout && <LogOutModule setLogout={setLogout} />}
         </div>
     );
 };

@@ -5,12 +5,14 @@ import { useUserQuery } from '@/redux/api/userApi';
 import { getUserInfo, isLoggedIn } from '@/service/auth.service';
 import { IconLogout } from '@tabler/icons-react';
 import Link from 'next/link';
+import LogOutModule from '@/modules/LogOutModule';
 
 const ProfileImg = ({ setLogout, routes }: any) => {
     const userInfo: any = getUserInfo()
     const isLogin = isLoggedIn()
     const id = userInfo ? userInfo?.userId : ''
     const { data, isLoading } = useUserQuery(id)
+    console.log(isLoading)
 
     return (
         <div>
@@ -60,6 +62,7 @@ const ProfileImg = ({ setLogout, routes }: any) => {
                     </ul>
                 </ul>
             </div>
+
         </div>
     );
 };

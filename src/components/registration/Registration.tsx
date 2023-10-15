@@ -18,18 +18,20 @@ const Registration = () => {
     } = useForm();
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
+    const router = useRouter()
 
     const [userSignUP] = useUserSignupMutation()
 
 
-    const router = useRouter()
-
 
     const onSubmit = async (data: any) => {
+        setLoading
+        delete data.confirmPass;
         try {
             const res = await userSignUP({ ...data }).unwrap();
             console.log(res, data)
-            if (res?.accessToken) {
+            if (res?.id) {
+                setLoading(false)
                 router.push("/");
                 message.success("Account created successfully!");
                 reset()
@@ -37,7 +39,9 @@ const Registration = () => {
 
             console.log(res);
         } catch (err: any) {
+            setLoading(false)
             console.error(err.message);
+            setError(err?.message)
         }
     };
 
@@ -64,11 +68,10 @@ const Registration = () => {
                             />
                         </div>
                         {error && (
-                            <p className="text-red-500 mb-2">
+                            <p className="text-red-500 font-Oswald mb-2">
                                 <small>{error}</small>
                             </p>
                         )}
-
 
                         <div className="w-full">
                             <input

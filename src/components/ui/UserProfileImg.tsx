@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { IconUserCircle } from '@tabler/icons-react';
 
 const UserProfileImg = ({ me, className, textColor }: any) => {
     console.log(me)
@@ -15,9 +15,12 @@ const UserProfileImg = ({ me, className, textColor }: any) => {
                     />
 
                 )
-                    : (
+                    : me?.firstName ? (
                         <h2 className={`${textColor ? textColor : "text-xl element-font-5 text-white"} uppercase font-bold `}>{me?.firstName?.slice(0, 1)}{me?.lastName?.slice(0, 1)}</h2>
                     )
+                        : (
+                            <h2 className={`${textColor ? textColor : "text-xl element-font-5 text-white"} uppercase font-bold `}>{<IconUserCircle />}</h2>
+                        )
             }
         </div>
     );

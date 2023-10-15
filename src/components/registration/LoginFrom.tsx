@@ -45,6 +45,7 @@ const LoginFrom = () => {
             storeUserInfo({ accessToken: res?.accessToken });
             console.log(res);
         } catch (err: any) {
+            setError(err.message)
             console.error(err.message);
         }
     };
@@ -83,7 +84,7 @@ const LoginFrom = () => {
 
 
                         {error && (
-                            <p className="text-red-500 mb-2">
+                            <p className="text-red-500 font-Oswald mb-2">
                                 <small>{error}</small>
                             </p>
                         )}
@@ -93,8 +94,6 @@ const LoginFrom = () => {
                             type="submit"
                             value="Login"
                         />
-
-
 
                     </form>
 
