@@ -15,9 +15,9 @@ const ProfileBanner = () => {
     return (
         <div>
             <div className='banner-home-bg overflow-hidden rounded-b-[60px] pb-5  md:rounded-b-[100px]'>
-                <div className='bg-search-box pt-8 p-4'>
+                <div className='bg-search-box backdrop-blur-sm pt-8 p-4'>
                     <UserProfileImg
-                        className={'w-[100px]  h-[100px] md:w-[150px] bgGradient md:h-[150px] mx-auto ring-purple-700 ring-offset-base-100 ring-offset-2'}
+                        className={'w-[100px]  h-[100px] md:w-[150px] bgGradient md:h-[150px] mx-auto ring-purple-700 ring-[6px] ring-offset-base-100 ring-offset-[3px]'}
                         textColor={'text-white text-[40px] sm:text-[60px] font-reem text2 font-bold font-reem'}
                         me={data}
                     />
@@ -30,19 +30,19 @@ const ProfileBanner = () => {
                     </div>
                 </div>
             </div>
-            <div className='bg-[#6124f079] p-2 sm:p-4 sm:mx-4 mx-2 -mt-[40px] sm:-mt[60px] rounded-xl'>
+            <div className='bg-[#6124f079] backdrop-blur-xl p-2 sm:p-4 sm:mx-4 mx-2 -mt-[40px] sm:-mt[60px] rounded-xl'>
                 <div className='flex sm:mb-4 mb-2 item-center justify-between w-full gap-x-2 md:gap-x-3'>
 
                     <div className='w-full'>
-                        <Link href='/' className="flex gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
+                        <Link href='/profile/update-profile' className="flex gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
                             <span className='text-white hidden sm:block'> <IconUserSquareRounded size={24} /> </span>
                             <span className="text2">Update Profile</span>
                         </Link>
                     </div>
                     <div className='w-full'>
-                        <Link href='/' className="flex gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
+                        <Link href='/profile/update-profile' className="flex gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
                             <span className='text-white hidden sm:block'> <IconUserSquareRounded size={24} /> </span>
-                            <span className="text2">Update Profile</span>
+                            <span className="text2">Change Password</span>
                         </Link>
                     </div>
 
@@ -51,7 +51,9 @@ const ProfileBanner = () => {
                 <InfoField name={"Email :"} value={data?.email} />
                 <InfoField name={"Address :"} value={data?.address} />
                 <InfoField name={"Gender :"} value={data?.gender} />
-                <InfoField name={"Age :"} value={data?.age} />
+                <InfoField name={"contact No :"} value={data?.contactNo} />
+                <InfoField name={"Role :"} value={data?.role} />
+                <InfoField name={"Date of birth :"} value={data?.dateOfBirth} />
             </div>
         </div>
     );

@@ -70,10 +70,31 @@ export interface IFaculty {
   updatedAt: string;
   __v: number;
 }
+
+export interface IUser {
+  address: string | null;
+  contactNo: string | null;
+  email: string;
+  firstName: string;
+  lastName: string;
+  gender: null;
+  id: string;
+  password: string;
+  profileImg: string | null;
+  bookingPlayGrounds: [];
+  WishLists: [];
+  reviewRatings: [];
+  role: string;
+  dateOfBirth: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+
 export interface IStudent {
   id: string;
-  name: Name & { id: string };
+  firstName: string;
   dateOfBirth: string;
+  lastName: string;
   gender: string;
   bloodGroup: string;
   email: string;

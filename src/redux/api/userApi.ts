@@ -1,3 +1,4 @@
+import { IMeta, IStudent, IUser } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
@@ -14,12 +15,12 @@ export const userApi = baseApi.injectEndpoints({
           params: arg,
         };
       },
-      // transformResponse: (response: IStudent[], meta: IMeta) => {
-      //   return {
-      //     students: response,
-      //     meta,
-      //   };
-      // },
+      transformResponse: (response: IUser, meta: IMeta) => {
+        return {
+          users: response,
+          meta,
+        };
+      },
       providesTags: [tagTypes.user],
     }),
 
@@ -34,7 +35,7 @@ export const userApi = baseApi.injectEndpoints({
 
     // update user
     updateUser: build.mutation({
-      query: (data) => ({
+      query: (data: any) => ({
         url: `${USER_URL}/${data.id}`,
         method: "PATCH",
         data: data.body,

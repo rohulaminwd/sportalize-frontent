@@ -1,3 +1,4 @@
+import { IMeta } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
@@ -5,6 +6,14 @@ const BOOKING_ITEM_URL = "/bookingItems";
 
 export const bookingItemApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
+    createBooking: build.mutation({
+      query: (data) => ({
+        url: `${BOOKING_ITEM_URL}/create`,
+        method: "POST",
+        data: data,
+      }),
+      invalidatesTags: [tagTypes.bookingItem],
+    }),
     // Get All bookingItems
     getBookingItems: build.query({
       query: (arg: Record<string, any>) => {
@@ -14,12 +23,12 @@ export const bookingItemApi = baseApi.injectEndpoints({
           params: arg,
         };
       },
-      // transformResponse: (response: IStudent[], meta: IMeta) => {
-      //   return {
-      //     students: response,
-      //     meta,
-      //   };
-      // },
+      transformResponse: (response: any, meta: IMeta) => {
+        return {
+          BookingItems: response,
+          meta,
+        };
+      },
       providesTags: [tagTypes.bookingItem],
     }),
 
@@ -58,4 +67,5 @@ export const {
   useBookingItemQuery,
   useUpdateBookingItemsMutation,
   useDeleteBookingItemsMutation,
+  useCreateBookingMutation,
 } = bookingItemApi;

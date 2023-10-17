@@ -4,7 +4,7 @@ import { IconUserCircle } from '@tabler/icons-react';
 const UserProfileImg = ({ me, className, textColor }: any) => {
     console.log(me)
     return (
-        <div className={`${className} rounded-full flex items-center justify-center ring ring-[#91f2dc] ring-offset-base-100 ring-offset-2`}>
+        <div className={`${className} overflow-hidden rounded-full flex items-center justify-center ring ring-[#91f2dc] ring-offset-base-100 ring-offset-2`}>
             {
                 me?.profileImg ? (
                     <Image

@@ -24,7 +24,9 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
 
 
     return <Layout hasSider>
-        <Sidebar />
+        <div className="hidden md:block sidebar-bg">
+            <Sidebar />
+        </div>
         <Contents>
             {children}
         </Contents>
