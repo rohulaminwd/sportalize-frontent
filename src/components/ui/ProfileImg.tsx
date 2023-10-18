@@ -12,7 +12,6 @@ const ProfileImg = ({ setLogout, routes }: any) => {
     const isLogin = isLoggedIn()
     const id = userInfo ? userInfo?.userId : ''
     const { data, isLoading } = useUserQuery(id)
-    console.log(isLoading)
 
     return (
         <div>

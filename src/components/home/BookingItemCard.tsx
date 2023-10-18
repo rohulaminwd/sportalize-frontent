@@ -37,7 +37,7 @@ const BookingItemCard = () => {
                                 </div>
                                 <div className="flex mt-5 items-center my-2 justify-between">
                                     <h5 className='text-purple-700 text-xl font-bold text2'>{item?.label}</h5>
-                                    <span className='text-[#e5cefa] font-bold text-24 '><IconHeartPlus /></span>
+                                    <span className='text-[#e5cefa] font-bold text-24 '>12</span>
                                 </div>
                                 <div className="mt-2 font-all">
                                     <p className='text-sm text2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, harum!</p>

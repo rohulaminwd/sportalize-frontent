@@ -38,7 +38,7 @@ export const bookingItemApi = baseApi.injectEndpoints({
         url: `${BOOKING_ITEM_URL}/${id}`,
         method: "GET",
       }),
-      providesTags: [tagTypes.user],
+      providesTags: [tagTypes.bookingItem],
     }),
 
     // update bookingItems
@@ -48,7 +48,7 @@ export const bookingItemApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      invalidatesTags: [tagTypes.user],
+      invalidatesTags: [tagTypes.bookingItem],
     }),
 
     // delete bookingItem
@@ -57,7 +57,7 @@ export const bookingItemApi = baseApi.injectEndpoints({
         url: `${BOOKING_ITEM_URL}/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: [tagTypes.user],
+      invalidatesTags: [tagTypes.bookingItem],
     }),
   }),
 });

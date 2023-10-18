@@ -22,7 +22,7 @@ const PasswordFiled = ({ setValue, field }: any) => {
             </p>
             <div className='relative w-full'>
                 <input
-                    type="password"
+                    type={passType}
                     placeholder={field}
                     required
                     className=" text2 text-xl rounded-md border border-dashed border-[#8954ebb0]  bg-transparent input-md outline-none w-full"

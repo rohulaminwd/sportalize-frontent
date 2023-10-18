@@ -1,7 +1,6 @@
 import React from 'react';
 
 const InputText = ({ label, value, setValue, register, name }: any) => {
-    console.log(value, "value")
     return (
         <div className="font-all w-full mt-2">
             <p className="text-[20px] mt-2 text-left">

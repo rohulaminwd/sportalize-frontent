@@ -1,6 +1,7 @@
 
 
 import { USER_ROLE } from "@/constants/role";
+import { IconClipboardList, IconUsers } from "@tabler/icons-react";
 import { IconAddressBook, IconBrandBooking, IconHeart } from "@tabler/icons-react";
 
 export const sidebarItems = (role: string) => {
@@ -33,19 +34,19 @@ export const sidebarItems = (role: string) => {
         ...defaultSidebarItems,
         {
             label: "Mange User",
-            icon: <IconBrandBooking />,
+            icon: <IconUsers />,
             key: `/manage-users`,
             path: "/manage-users"
         },
         {
             label: "create Fields",
-            icon: <IconHeart />,
+            icon: <IconClipboardList />,
             key: `/create-field`,
             path: "/crete-field"
         },
         {
             label: "Bookings",
-            icon: <IconHeart />,
+            icon: <IconBrandBooking />,
             key: `/manage-booking`,
             path: "/manage-booking"
         },
@@ -55,18 +56,18 @@ export const sidebarItems = (role: string) => {
         ...defaultSidebarItems,
         {
             label: "Mange User",
-            icon: <IconBrandBooking />,
+            icon: <IconUsers />,
             key: `/manage-users`,
             path: "/manege-user"
         },
         {
             label: "create Fields",
-            icon: <IconHeart />,
+            icon: <IconClipboardList />,
             key: `/create-field`,
             path: "/crete-field"
         },
         {
-            label: "Bookings",
+            label: "IconBrandBooking",
             icon: <IconHeart />,
             key: `/manage-booking`,
             path: "/manage-booking"

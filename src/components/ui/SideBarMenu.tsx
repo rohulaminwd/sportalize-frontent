@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 
 
 const SideBarMenu = ({ items }: any) => {
-    console.log(items, 'items')
+
     const [active, setActive] = useState<string>()
     const path = usePathname();
     return (

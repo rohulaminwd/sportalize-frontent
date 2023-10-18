@@ -20,7 +20,6 @@ const BookingFromData = ({ register }: any) => {
             </div>
             <div>
                 <TextAreaField label={"Description"} name="description" register={register} />
-
             </div>
         </div>
     );

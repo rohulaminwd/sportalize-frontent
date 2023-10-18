@@ -8,19 +8,32 @@ const TextAreaField = ({ label, value, setValue, register, name }: any) => {
                     {label} {label === "Email" ? <span className='text-[16px]'>(Email Address cannot be changed)</span> : ""}
                 </span>
             </p>
-            <textarea
-                placeholder={label}
-                required
-                className="min-h-[100px] text2 text-xl rounded-md border border-dashed border-[#8954ebb0]  bg-transparent input-md outline-none w-full"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                {...register(name, {
-                    required: {
-                        value: true,
-                        message: `${label} field Required`,
-                    },
-                })}
-            />
+            {
+                register ? (
+                    <textarea
+                        placeholder={label}
+                        required
+                        className="min-h-[100px] text2 text-xl rounded-md border border-dashed border-[#8954ebb0]  bg-transparent input-md outline-none w-full"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                        {...register(name, {
+                            required: {
+                                value: true,
+                                message: `${label} field Required`,
+                            },
+                        })}
+                    />
+                ) : (
+                    <textarea
+                        placeholder={label}
+                        required
+                        className="min-h-[100px] text2 text-xl rounded-md border border-dashed border-[#8954ebb0]  bg-transparent input-md outline-none w-full"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                    />
+                )
+            }
+
         </div>
     );
 };

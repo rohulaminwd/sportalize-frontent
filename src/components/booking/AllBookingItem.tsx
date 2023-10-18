@@ -12,7 +12,7 @@ const AllBookingItem = () => {
         <div>
             <div className=''>
                 <div>
-                    <h1 className='text-xl text2'>Total users</h1>
+                    <h1 className='text-xl text2'>Total Booking Items</h1>
                 </div>
                 <div>
                     {

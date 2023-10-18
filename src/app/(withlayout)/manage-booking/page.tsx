@@ -1,7 +1,7 @@
 import AllBookingItem from '@/components/booking/AllBookingItem';
-import React from 'react';
 
-const page = () => {
+const Page = () => {
+
     return (
         <div>
             <div className='mb-2'>
@@ -18,4 +18,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

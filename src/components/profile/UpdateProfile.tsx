@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { message } from 'antd';
 import SpinBtn from '../ui/SpinBtn';
+import { useChangePasswordMutation } from '@/redux/api/authApi';
 
 
 const UpdateProfile = () => {
@@ -30,25 +31,24 @@ const UpdateProfile = () => {
     const userInfo: any = getUserInfo()
     const id = userInfo ? userInfo?.userId : ''
     const { data, isLoading } = useUserQuery(id)
+
     const [loading, setLoading] = useState(false);
+    const [loadingPass, setLoadingPass] = useState(false);
+
     const [error, setError] = useState();
+    const [errorPass, setErrorPass] = useState();
 
     const [firstName, setFirstName] = useState<string>(data ? data?.firstName : data?.firstName)
     const [lastName, setLastName] = useState<string>(data?.lastName ? data?.lastName : data?.lastName)
     const [address, setAddress] = useState<string>(data?.address ? data?.address : data?.address)
     const [gender, setGender] = useState<string>(data?.gender ? data?.gender : data?.gender)
     const [contactNo, setContactNo] = useState<string>(data?.contactNo ? data?.contactNo : data?.contactNo)
+
     const [newPass, setNewPass] = useState<string>()
     const [currentPass, setCurrentPass] = useState<string>()
 
     const [updateUser] = useUpdateUserMutation()
-
-
-    console.log(firstName,
-        lastName,
-        address,
-        contactNo,
-        gender, "kisui nai")
+    const [changePassword] = useChangePasswordMutation()
 
 
 
@@ -102,8 +102,30 @@ const UpdateProfile = () => {
     }
 
 
-    const changePass = () => {
+    const changePass = async () => {
+        setLoadingPass(true)
+        const passwordData = {
+            currentPass,
+            newPass
+        }
 
+        try {
+            const res = await changePassword({ body: passwordData, id }).unwrap();
+            console.log(res, "passwordData")
+            if (res?.id) {
+                setLoadingPass(false)
+                router.push("/profile");
+                message.success("Account update successfully!");
+            } else {
+                setErrorPass(res?.message)
+                setLoadingPass(false)
+                console.log(res, "okkkk")
+            }
+        } catch (err: any) {
+            setLoadingPass(false)
+            console.error(err.message, "djdjfdfjdfh");
+            setErrorPass(err?.message)
+        }
     }
 
 
@@ -171,13 +193,18 @@ const UpdateProfile = () => {
                         <PasswordFiled field={"Current Password"} setValue={setCurrentPass} />
                         <PasswordFiled field={"New Password"} setValue={setNewPass} />
                     </div>
+                    {errorPass && (
+                        <p className="text-red-500 font-Oswald mb-2">
+                            <small>{errorPass}</small>
+                        </p>
+                    )}
                     {
-                        !loading &&
+                        !loadingPass &&
                         <button onClick={changePass} className="flex cursor-pointer text-white w-full sm:w-[300px] mt-5 gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
                             <span>Change Password</span>
                         </button>
                     }
-                    <SpinBtn loading={loading} />
+                    <SpinBtn loading={loadingPass} />
                 </div>
             </div>
 
