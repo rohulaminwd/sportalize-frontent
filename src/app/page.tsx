@@ -10,6 +10,7 @@ import CategorySports from '@/components/home/CategorySports'
 import BookingItemCard from '@/components/home/BookingItemCard'
 import SideBarModule from '@/modules/SideBarModule'
 import LogOutModule from '@/modules/LogOutModule'
+import UpcomeingEvents from '@/components/home/upcomeingEvents'
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
       </div>
       <div className='bg-[#382383] py-10'>
         <BookingItemCard />
+      </div>
+      <div className='bg-[#3e2791] py-10'>
+        <UpcomeingEvents />
       </div>
       <LogOutModule />
 

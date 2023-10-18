@@ -23,7 +23,7 @@ const AllBookingItem = () => {
                         ))
                     }
                     <LoadingData loading={isLoading} />
-                    <NoData data={data} loading={isLoading} />
+                    <NoData data={data?.BookingItems} loading={isLoading} />
                 </div>
             </div>
         </div>
