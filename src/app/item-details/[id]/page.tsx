@@ -69,7 +69,7 @@ const DetailsPage = ({ params: { id } }: { params: { id: string } }) => {
                                     </div>
                                 </div>
                                 <div className='w-full'>
-                                    <Link href="/" className='bg-btn rounded-xl py-2 px-5 my-5 block text-center w-full text-white'>Booking Now</Link>
+                                    <Link href={`/order-booking/${id}`} className='bg-btn rounded-xl py-2 px-5 my-5 block text-center w-full text-white'>Booking Now</Link>
                                 </div>
                                 <div className='mt-5 p-3 rounded-xl bg-[#7529e623]'>
                                     <h3 className='text2 font-bold text-xl mb-3'>User Review and Ratting</h3>

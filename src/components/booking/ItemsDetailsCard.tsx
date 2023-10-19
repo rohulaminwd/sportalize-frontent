@@ -82,7 +82,7 @@ const ItemsDetailsCard = ({ item }: any) => {
                     <div className="mt-2 font-all">
                         <p className='text-sm text2'>{item?.description?.slice(0, 100)}</p>
                         <Link href={`item-details/${item?.id}`} className='btn-sm mt-5 font-reem btn w-full bg-search-box bg-[#b393ee] hover:bg-purple-600 border-0 text-white'>See Details</Link>
-                        <Link href={`item-details/${item?.id}`} className='btn-sm mt-2 font-reem btn w-full bg-btn bg-[#b393ee] hover:bg-purple-600 border-0 text-[#dacbf7]'>Booking Now</Link>
+                        <Link href={`order-booking/${item?.id}`} className='btn-sm mt-2 font-reem btn w-full bg-btn bg-[#b393ee] hover:bg-purple-600 border-0 text-[#dacbf7]'>Booking Now</Link>
                     </div>
                 </div>
             </div>
