@@ -4,6 +4,7 @@ export enum tagTypes {
   feedback = "feedback",
   wishlist = "wishlist",
   reviews = "reviews",
+  booking = "booking",
   bookingItem = "bookingItem",
 }
 

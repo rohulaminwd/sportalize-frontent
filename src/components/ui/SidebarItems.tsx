@@ -21,7 +21,7 @@ export const sidebarItems = (role: string) => {
             label: "Booking",
             icon: <IconBrandBooking />,
             key: `/booking`,
-            path: "/booking"
+            path: "/booking-history"
         },
         {
             label: "My Favorite",
