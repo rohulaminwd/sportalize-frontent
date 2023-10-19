@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee';
 
 const UpcomeingEvents = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto px-2'>
             <div className='mb-5'>
                 <h1
                     className="text-[28px] text-center font-Oswald font-extrabold py-2 mt-5 font-all pt-2 sm:mb-5 sm:text-4xl md:text-[40px] text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-600 "
@@ -27,7 +27,7 @@ const UpcomeingEvents = () => {
 
             </div>
             <Marquee
-                className="rounded-md text-purple-700 w-full text-[15px] mt-10  md:text-[24px] font-bold"
+                className="rounded-md text-purple-700 w-full text-[15px] mt-28 mb-10  md:text-[24px] font-bold"
                 gradientWidth={80}
                 pauseOnHover={true}
                 gradientColor={"gradientColor"}

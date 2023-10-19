@@ -11,6 +11,8 @@ import BookingItemCard from '@/components/home/BookingItemCard'
 import SideBarModule from '@/modules/SideBarModule'
 import LogOutModule from '@/modules/LogOutModule'
 import UpcomeingEvents from '@/components/home/upcomeingEvents'
+import Feedback from '@/components/home/Feedback'
+import Review from '@/components/home/Reviews'
 
 export default function Home() {
   return (
@@ -26,6 +28,14 @@ export default function Home() {
       </div>
       <div className='bg-[#3e2791] py-10'>
         <UpcomeingEvents />
+      </div>
+      <div className='w-full h-full sidebar-bg bg-cover'>
+        <div className='bg-[#1e0e79e5] py-10'>
+          <Feedback />
+        </div>
+      </div>
+      <div className='bg-[#3e2791] py-10'>
+        <Review />
       </div>
       <LogOutModule />
 

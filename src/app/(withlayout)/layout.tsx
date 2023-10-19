@@ -22,7 +22,6 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
         return <p>Loading...</p>
     }
 
-
     return <Layout hasSider>
         <div className="hidden md:block sidebar-bg">
             <Sidebar />

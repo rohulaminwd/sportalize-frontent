@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { bookingCategory } from "@/constants/bookingCategory";
 import { useGetBookingItemsQuery } from "@/redux/api/bookingItemApi";
+import Link from "next/link";
 
 const BookingItemCard = () => {
     const query: Record<string, any> = {};
@@ -49,7 +50,7 @@ const BookingItemCard = () => {
                                 </div>
                                 <div className="mt-2 font-all">
                                     <p className='text-sm text2'>{item?.dsc}</p>
-                                    <label htmlFor='class-details' className='btn-sm mt-5 font-reem btn w-full bg-search-box bg-[#b393ee] hover:bg-purple-600 border-0 text-white'>See More</label>
+                                    <Link href='/items-list' className='btn-sm mt-5 font-reem btn w-full bg-search-box bg-[#b393ee] hover:bg-purple-600 border-0 text-white'>See More</Link>
                                 </div>
                             </div>
                         </div>

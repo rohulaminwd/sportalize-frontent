@@ -21,7 +21,6 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
     const [image, setImage] = useState<any>();
     const [img, setImg] = useState<any>();
     const router = useRouter()
-    const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
 
@@ -135,7 +134,6 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
                         <span>Update Booking Item</span>
                     </button>
                 }
-
                 <SpinBtn loading={loading} />
             </div>
         </div>

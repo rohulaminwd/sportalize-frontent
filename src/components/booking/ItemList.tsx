@@ -1,26 +1,28 @@
-"use client"
+"user client"
 
-import { useGetBookingItemsQuery } from "@/redux/api/bookingItemApi";
-import BookingItemCard from "./BookingItemCard";
-import LoadingData from "../ui/LoadingData";
-import NoData from "../ui/NoData";
+import { useGetBookingItemsQuery } from '@/redux/api/bookingItemApi';
+import ItemsDetailsCard from './ItemsDetailsCard';
+import LoadingData from '../ui/LoadingData';
+import NoData from '../ui/NoData';
 
-const AllBookingItem = () => {
+const ItemList = () => {
 
     const query: Record<string, any> = {};
     const { data, isLoading } = useGetBookingItemsQuery({ ...query })
 
     return (
-        <div>
+        <div className='pt-16'>
             <div className=''>
                 <div>
-                    <h1 className='text-xl text2'>Total Booking Items</h1>
+                    <h1 className='text-xl font-Oswald font-bold mt-5 text2'>
+                        <span className='text2'>Total Booking Items</span>
+                    </h1>
                 </div>
-                <div>
+                <div className='booking-grid'>
                     {
                         Array.isArray(data?.BookingItems) && data?.BookingItems?.map((item: any, index: number) => (
                             <div key={index}>
-                                <BookingItemCard item={item} />
+                                <ItemsDetailsCard item={item} />
                             </div>
                         ))
                     }
@@ -32,4 +34,4 @@ const AllBookingItem = () => {
     );
 };
 
-export default AllBookingItem;
+export default ItemList;
