@@ -4,11 +4,25 @@ import { useGetBookingItemsQuery } from '@/redux/api/bookingItemApi';
 import ItemsDetailsCard from './ItemsDetailsCard';
 import LoadingData from '../ui/LoadingData';
 import NoData from '../ui/NoData';
+import { useState } from 'react';
 
 const ItemList = () => {
 
     const query: Record<string, any> = {};
+    const [page, setPage] = useState<number>(1);
+    const [size, setSize] = useState<number>(10);
+    const [sortBy, setSortBy] = useState<string>("");
+    const [sortOrder, setSortOrder] = useState<string>("");
+
+    query["limit"] = size;
+    query["page"] = page;
+    query["sortBy"] = sortBy;
+    query["sortOrder"] = sortOrder;
+
     const { data, isLoading } = useGetBookingItemsQuery({ ...query })
+
+    const BookingItems = data?.BookingItems;
+    const meta = data?.meta;
 
     return (
         <div className='pt-16'>
@@ -20,7 +34,7 @@ const ItemList = () => {
                 </div>
                 <div className='booking-grid'>
                     {
-                        Array.isArray(data?.BookingItems) && data?.BookingItems?.map((item: any, index: number) => (
+                        Array.isArray(BookingItems) && BookingItems?.map((item: any, index: number) => (
                             <div key={index}>
                                 <ItemsDetailsCard item={item} />
                             </div>

@@ -50,10 +50,6 @@ const NavbarSecondary = () => {
                         <span className='text2'><IconBallVolleyball size={28} /></span>
                         <span className='text2'>Sportalize</span>
                     </div>
-                    <div style={{ paddingLeft: "20px" }} className="flex cursor-pointer items-center gap-x-1 text-[16px] font-extrabold font-Oswald">
-                        <span className='text2'><IconSearch size={20} /></span>
-                        <span className='text2 text-[16px]'>Search</span>
-                    </div>
                 </div>
                 <div className='hidden md:flex'>
                     <ul className='flex font-Oswald justify-center items-center'>

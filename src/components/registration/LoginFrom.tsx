@@ -51,16 +51,16 @@ const LoginFrom = () => {
     };
 
     return (
-        <div className="h-full">
+        <div className="h-full w-full">
             <div
-                className="w-full backdrop-blur-sm  my-auto mx-auto md:w-[500px] shadow-2xl shadow-[#80e4f19f] gradient1 p-3 sm:p-5"
-                data-aos="zoom-in-left"
-                data-aos-delay="100"
-                data-aos-duration="800"
+                className="w-full backdrop-blur-sm  my-auto mx-auto  shadow-2xl shadow-[#80e4f19f] gradient1 p-3 sm:p-5"
+            // data-aos="zoom-in-left"
+            // data-aos-delay="100"
+            // data-aos-duration="800"
             >
                 <div className="text-center">
 
-                    <p className="text-xl py-3 text-left sm:mb-2 font-bold font-all">
+                    <p className="text-xl py-3 text-left sm:mb-2 font-bold font-reem">
                         <span className="text2">Login Now</span>
                     </p>
 

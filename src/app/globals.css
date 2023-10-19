@@ -20,13 +20,8 @@
 }
 
 body {
-  color: #000;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #ffffff;
+  background: #28025a
 }
 
 /* Font class */
@@ -142,7 +137,6 @@ body {
   background-image: url('../assets/image/login-bg.avif');
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Set the height as needed */
 }
 
 .contact-bg{

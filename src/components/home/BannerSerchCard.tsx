@@ -4,20 +4,38 @@ import { bookingCategory } from '@/constants/bookingCategory';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from "framer-motion"
 import { IconCaretLeft, IconCaretDown, IconMapPinSearch } from '@tabler/icons-react';
+import { useGetBookingItemsQuery } from '@/redux/api/bookingItemApi';
 
 
 
 const BannerSerchCard = () => {
 
+    const query: Record<string, any> = {};
     const [category, setCategory] = useState<any>(bookingCategory[0])
+
+    const [location, setLocation] = useState<string>('');
+    const [sportCategory, setSportCategory] = useState<string>('');
+
+
     const [open, setClose] = useState<boolean>(true)
     const containerRef = useRef();
 
 
     const handleSelect = (item: any, i: boolean) => {
         setCategory(item)
+        setSportCategory(item?.label)
         setClose(!open)
     }
+
+    query["search"] = location;
+    query["sportCategory"] = sportCategory;
+
+
+    const { data, isLoading } = useGetBookingItemsQuery({ ...query })
+
+    const BookingItems = data?.BookingItems;
+
+    console.log(BookingItems, location, sportCategory, "done done")
 
 
     return (
@@ -63,6 +81,7 @@ const BannerSerchCard = () => {
                         <input
                             type="text"
                             placeholder="Insert a Location or Venue"
+                            onChange={(e) => setLocation(e.target.value)}
                             required
                             className=" text2 mt-3 pl-14 font-extrabold text-xl rounded-none border-2 px-2 border-dashed border-white  bg-transparent input-md outline-none w-full"
                         />

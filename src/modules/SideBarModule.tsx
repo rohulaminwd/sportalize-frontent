@@ -33,7 +33,7 @@ const SideBarModule = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href='' className='flex items-center px-3'>
+                        <Link href='login' className='flex items-center px-3'>
                             <span style={{ marginRight: "5px" }} className='font-Oswald text-[10px] text-white'><IconLogin /></span>
                             <span className='font-Oswald text2 py-1 text-[18px]'>Sign</span>
                         </Link>

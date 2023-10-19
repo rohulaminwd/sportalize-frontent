@@ -7,9 +7,9 @@ import login from "../../assets/lottie/login.json"
 const LoginLeft = () => {
     return (
         <div
-            data-aos="zoom-in-right"
-            data-aos-delay="100"
-            data-aos-duration="800"
+            // data-aos="zoom-in-right"
+            // data-aos-delay="100"
+            // data-aos-duration="800"
             className='w-full h-full my-auto md:shadow-xl  mx-auto md:w-[500px] bg-gradient-trasparent p-3 sm:p-5'
         >
             <p className="text-2xl pt-3 text-left sm:mb-2 font-bold font-all">
