@@ -14,12 +14,12 @@ export const homeRoute = [
     },
     {
         name: "Booking",
-        path: "/booking",
+        path: "/items-list",
         icon: <IconBrandBooking />
     },
     {
         name: "Blog",
-        path: "/blog",
+        path: "/",
         icon: <IconArticle />
     },
 
