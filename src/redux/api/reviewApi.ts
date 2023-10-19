@@ -1,8 +1,7 @@
-import { IMeta, IStudent, IUser } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
-const REVIEW_URL = "/feedback";
+const REVIEW_URL = "/reviews";
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -13,7 +12,7 @@ export const userApi = baseApi.injectEndpoints({
         method: "POST",
         data: data,
       }),
-      invalidatesTags: [tagTypes.reviews],
+      invalidatesTags: [tagTypes.bookingItem],
     }),
 
     // Get All Users
