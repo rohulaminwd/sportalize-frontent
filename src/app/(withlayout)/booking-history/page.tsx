@@ -56,11 +56,6 @@ const Page = () => {
                                             <span className='text-red-500'>Cancel</span>
                                         </button>
                                     </Tooltip>
-                                    <Tooltip placement="top" color='#ec4242' title={"delete item"}>
-                                        <button onClick={() => handleDelete(item)} className='text-[#802323] hover:border rounded-md border-[#a17df379] p-1 md:px-3'>
-                                            <span><IconTrash /></span>
-                                        </button>
-                                    </Tooltip>
                                 </div>
                             </div>
                         </div>

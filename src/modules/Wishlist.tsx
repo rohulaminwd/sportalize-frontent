@@ -19,7 +19,7 @@ const Wishlist = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="wish-list" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-72 min-h-full bg-[#7040f3c4] text-base-content">
+                <ul className="menu p-4 w-72 min-h-full bg-[#4d21c5c4] text-base-content">
                     <label htmlFor="wish-list" aria-label="close sidebar" className="text-white absolute cursor-pointer top-5 right-4"><IconX /></label>
                     <h1 className='text-xl font-Oswald text-white text-center'>Your Favorite List</h1>
                     <div className='mt-8'>

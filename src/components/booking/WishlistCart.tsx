@@ -21,8 +21,8 @@ const WishlistCart = ({ item, id }: any) => {
 
     return (
         <div>
-            <Link href={`item-details/${item?.id}`} className='bg-[#6529d4b7] text-[#d1b4f7] rounded-lg my-2 border-2 p-1 duration-300 hover:border-[#6944f1] border-[#8f62fa60] flex items-center justify-between'>
-                <div className='flex gap-x-3 items-center'>
+            <div className='bg-[#693ce641] text-[#d1b4f7] rounded-lg my-2 border-2 p-1 duration-300 hover:border-[#6944f1] border-[#8f62fa60] flex items-center justify-between'>
+                <Link href={`item-details/${item?.id}`} className='flex gap-x-3 text-white items-center'>
                     <div className='w-[60px] h-[60] rounded-lg overflow-hidden'>
                         <Image src={item?.img} className='w-[60px] h-[60px]' width={1000} height={1000} alt='image' />
                     </div>
@@ -33,13 +33,13 @@ const WishlistCart = ({ item, id }: any) => {
                             {item?.title}
                         </p>
                     </h3>
-                </div>
+                </Link>
                 <div className='flex items-end z-[100000] h-full'>
                     <button onClick={() => setDeleteItem(id)} className='text-[#802323] hover:border rounded-md border-[#a17df379] p-1 md:px-3'>
                         <span><IconTrash /></span>
                     </button>
                 </div>
-            </Link>
+            </div>
         </div>
     );
 };

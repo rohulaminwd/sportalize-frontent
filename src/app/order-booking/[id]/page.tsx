@@ -47,12 +47,12 @@ const BookingOrder = ({ params: { id } }: { params: { id: string } }) => {
     }
 
     return (
-        <div className='min-h-screen h-full bg-[#6926e68c]'>
+        <div className='min-h-screen h-full bg-[#4717a08c]'>
             <div className='max-w-7xl mx-auto px-3'>
                 <div className='pt-5'>
-                    <h1>
+                    <h1 className='text-center'>
                         <span className='text2 text-3xl '>
-                            Booking Item Details
+                            Booking order details Details
                         </span>
                     </h1>
                 </div>

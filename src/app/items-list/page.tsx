@@ -6,7 +6,7 @@ import NavbarSecondary from '@/share/NavbarSecondary';
 
 const page = () => {
     return (
-        <div className='min-h-screen h-full bg-[#6235dd9d]'>
+        <div className='min-h-screen h-full bg-[#3e1aa09d]'>
             <NavbarSecondary />
             <div className='max-w-7xl mx-auto'>
                 <div>

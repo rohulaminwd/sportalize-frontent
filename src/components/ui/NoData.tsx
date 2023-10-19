@@ -5,7 +5,7 @@ const NoData = ({ data, loading }: any) => {
     return (
         <>
             {
-                (!(data?.length >= 0) && !loading) &&
+                (!data && !loading) &&
                 <div className='w-full flex items-center justify-center'>
                     <div className='p-5'>
                         <span className='text-[#7451f1]'><IconDatabaseX size={80} /></span>
