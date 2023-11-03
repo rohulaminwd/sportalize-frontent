@@ -13,6 +13,7 @@ const ItemsDetailsCard = ({ item }: any) => {
     const { data, isLoading } = useMyWishlistQuery(id)
     const [addWishlist] = useCreateWishlistMutation()
     const [deleteWishlist] = useDeleteWishlistMutation()
+    const [add, setAdd] = useState<string>('')
 
     // console.log(data, isLoading)
 

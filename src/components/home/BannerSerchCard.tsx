@@ -13,12 +13,37 @@ const BannerSerchCard = () => {
     const query: Record<string, any> = {};
     const [category, setCategory] = useState<any>(bookingCategory[0])
 
-    const [location, setLocation] = useState<string>('');
     const [sportCategory, setSportCategory] = useState<string>('');
+    const [locationFilter, setLocationFilter] = useState('');
+    const [titleFilter, setTitleFilter] = useState('');
+
+
+    const { data, isLoading } = useGetBookingItemsQuery({ ...query })
+
+    const BookingItems = data?.BookingItems;
+
+    if (BookingItems) {
+        const categoryData = BookingItems && BookingItems?.filter((i: any) => i?.sportCategory === sportCategory)
+        const filteredData = categoryData.filter((item: any) => {
+            // Filter based on location
+            if (locationFilter && item.location.toLowerCase() !== locationFilter.toLowerCase()) {
+                return false;
+            }
+
+            if (titleFilter && !item.title.toLowerCase().includes(titleFilter.toLowerCase())) {
+                return false;
+            }
+
+            return true;
+        });
+
+        console.log(filteredData, categoryData, "dta")
+    }
+
+
 
 
     const [open, setClose] = useState<boolean>(true)
-    const containerRef = useRef();
 
 
     const handleSelect = (item: any, i: boolean) => {
@@ -27,15 +52,26 @@ const BannerSerchCard = () => {
         setClose(!open)
     }
 
-    query["search"] = location;
-    query["sportCategory"] = sportCategory;
 
 
-    const { data, isLoading } = useGetBookingItemsQuery({ ...query })
+    // const filteredData = categoryData.filter((item: any) => {
+    //     // Filter based on location
+    //     if (locationFilter && item.location.toLowerCase() !== locationFilter.toLowerCase()) {
+    //         return false;
+    //     }
 
-    const BookingItems = data?.BookingItems;
+    //     if (titleFilter && !item.title.toLowerCase().includes(titleFilter.toLowerCase())) {
+    //         return false;
+    //     }
 
-    console.log(BookingItems, location, sportCategory, "done done")
+    //     return true;
+    // });
+
+
+
+
+
+
 
 
     return (
@@ -81,7 +117,7 @@ const BannerSerchCard = () => {
                         <input
                             type="text"
                             placeholder="Insert a Location or Venue"
-                            onChange={(e) => setLocation(e.target.value)}
+                            onChange={(e) => setLocationFilter(e.target.value)}
                             required
                             className=" text2 mt-3 pl-14 font-extrabold text-xl rounded-none border-2 px-2 border-dashed border-white  bg-transparent input-md outline-none w-full"
                         />

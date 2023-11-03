@@ -9,10 +9,12 @@ import { useCreateOrderMutation } from '@/redux/api/bookingApi';
 import { useBookingItemQuery, useCreateBookingMutation } from '@/redux/api/bookingItemApi';
 import { getUserInfo } from '@/service/auth.service';
 import { message } from 'antd';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 
 const BookingOrder = ({ params: { id } }: { params: { id: string } }) => {
+    const router = useRouter()
     const userInfo: any = getUserInfo()
     const userId = userInfo ? userInfo?.userId : ''
     const [startTime, setStartTime] = useState<any>()
@@ -34,6 +36,7 @@ const BookingOrder = ({ params: { id } }: { params: { id: string } }) => {
         try {
             const res: any = await bookingOrder(bookingData)
             if (res?.id) {
+                router.push("/profile");
                 message.success("Order create successfully")
                 setLoading(false)
                 console.log(res)

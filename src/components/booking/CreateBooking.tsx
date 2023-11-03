@@ -10,6 +10,7 @@ import { useCreateBookingMutation } from '@/redux/api/bookingItemApi';
 import { useRouter } from 'next/navigation';
 import { Spin, message } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
+import SpinBtn from '../ui/SpinBtn';
 
 
 const CreateBooking = () => {
@@ -29,6 +30,7 @@ const CreateBooking = () => {
     const [createdBooking] = useCreateBookingMutation()
 
     const onSubmit = async (data: any) => {
+        setLoading(true)
         const fromData = new FormData();
         fromData.append("file", img);
         fromData.append("upload_preset", "expart_future_plan");
@@ -94,16 +96,14 @@ const CreateBooking = () => {
                             </p>
                         )}
                         <div className="w-full">
-                            <input
-                                className="flex cursor-pointer text-white w-full sm:w-[300px] mt-5 gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn"
-                                type="submit"
-                                value="Submit"
-                            />
                             {
-                                loading && <button className="flex cursor-pointer text-white w-full sm:w-[300px] mt-5 gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn">
-                                    <Spin indicator={antIcon} /> Proccesing
-                                </button>
+                                !loading && <input
+                                    className="flex cursor-pointer text-white w-full sm:w-[300px] mt-5 gap-x-2 text-sm rounded-lg p-2 justify-center md:text-lg items-center border-2 border-[#7949e770] bg-btn"
+                                    type="submit"
+                                    value="Submit"
+                                />
                             }
+                            <SpinBtn loading={loading} />
                         </div>
                     </form>
                 </div>
